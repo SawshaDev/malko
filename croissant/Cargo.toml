@@ -1,0 +1,15 @@
+[package]
+name = "croissant"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rocket = { version = "0.5.0-rc.2", features = ["json"] }
+serde = { version = "1.0.144", features = ["derive"] }
+tokio = { version = "1.22.0", features = ["rt-multi-thread", "macros"] }
+rocket_db_pools = { version = "0.1.0-rc.2", features = ["deadpool_redis"] }
+anyhow = "1.0.75"
+deadpool-redis = "0.13.0"
+
