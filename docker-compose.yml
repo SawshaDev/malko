@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+
+    croissant:
+        depends_on: ["redis"]
+
+        build:
+            context: .
+            dockerfile: croissant/Dockerfile
+
+    mochi:
+    
+        extends:
+            service: croissant
+
+
+        build:
+            dockerfile: mochi/Dockerfile
+
+    redis:
+        image: redis:6.2-alpine
+        restart: always
+        ports:
+            - '6379:6379'
